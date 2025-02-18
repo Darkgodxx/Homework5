@@ -1,5 +1,6 @@
 package pages.object;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
@@ -12,23 +13,25 @@ public class CatalogPage {
     private By purpleDuck = By.cssSelector("[class=\"link\"][title=\"Purple Duck\"]");
     private By blueDuck = By.cssSelector("[class=\"link\"][title=\"Blue Duck\"]");
 
-    public void getPrice(String priceExpected) {
+
+    @Step("Опеределение цены товара")
+    public void validatePrice(String priceExpected) {
         $(price).shouldHave(text(priceExpected));
     }
-
-    public void getStockStatus(String stockStatusExpected) {
+    @Step("Опеределение статуса товара")
+    public void validateStockStatus(String stockStatusExpected) {
         $(stockStatus).shouldHave(text(stockStatusExpected));
     }
-
-    public void getDeliveryStatus(String deliveryStatusExpected) {
+    @Step("Опеределение статуса доставки товара")
+    public void validateDeliveryStatus(String deliveryStatusExpected) {
         $(deliveryStatus).shouldHave(text(deliveryStatusExpected));
     }
-
-    public void getPurpleDuck() {
+    @Step("Выбрать фиолетовую утку")
+    public void clickPurpleDuck() {
         $(purpleDuck).click();
     }
-
-    public void getBlueDuck() {
+    @Step("Выбрать Синюю")
+    public void clickBlueDuck() {
         $(blueDuck).click();
     }
 }

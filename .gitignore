@@ -1,3 +1,5 @@
+
+
 # Compiled class file
 *.class
 
@@ -27,3 +29,4 @@ replay_pid*
 *.idea/
 #Project
 *.ini
+*.allure

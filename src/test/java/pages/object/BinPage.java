@@ -1,6 +1,7 @@
 package pages.object;
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
@@ -11,16 +12,16 @@ public class BinPage {
     private By redDuck = By.cssSelector("[class=\"link\"][title=\"Red Duck\"]");
     private By cardProduct = By.cssSelector("[name=\"add_cart_product\"]");
 
-
-    public void getQuantity(int quantityExpected) {
+    @Step ("Определение товара")
+    public void validateQuantity(int quantityExpected) {
         $(quantity).shouldHave(text(String.valueOf(quantityExpected)));
     }
-
-    public void getRedDuck() {
+    @Step ("Выбрать красную утку")
+    public void clickRedDuck() {
         $(redDuck).click();
     }
-
-    public void getcardProduct() {
+    @Step ("Добавить красную утку")
+    public void addcardProduct() {
         $(cardProduct).click();
     }
 }

@@ -1,40 +1,45 @@
 package pages.object.test;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import jdk.jfr.Label;
 import org.testng.annotations.Test;
 import pages.object.LoginMessagePage;
 import pages.object.LoginPage;
 import pages.object.TestBase;
-
+@Feature("Авторизация")
 public class LoginTest extends TestBase {
     private String successExpected = "You are now logged in as %s";
     private String login = "piotr.araya@filesaved.org";
     private String pass = "Test1234";
     private String name = "Test Test.";
     private String noticeErrorExpected;
-
-    @Test
-    public void LoginTest1() {
+    @Description ("Авторизации с логином и паролем")
+    @Test  (description  = "Успешная Авторизация")
+    public void LoginSuccessTest() {
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login(login, pass);
-        loginMessagePage.getMessageSuccess(String.format(successExpected, name));
+        loginMessagePage.MessageSuccess(String.format(successExpected, name));
     }
-
-    @Test
-    public void LoginTest2() {
+    @Description ("Авторизации с неверным логином и верным паролем")
+    @Test (description = "Неверно введен логин")
+    public void LoginErrorTest1() {
         noticeErrorExpected = "Wrong password or the account is disabled, or does not exist";
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login("piotr.awfaf.org", pass);
-        loginMessagePage.getMessageError(String.format(noticeErrorExpected));
+        loginMessagePage.MessageError(String.format(noticeErrorExpected));
     }
-
-    @Test
-    public void LoginTest3() {
+    @Description ("Авторизации с логином и пустым паролем")
+    @Test (description = "Неверно введен пароль")
+    public void LoginErrorTest2() {
         noticeErrorExpected = "You must provide both email address and password.";
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login(login, "");
-        loginMessagePage.getMessageError(String.format(noticeErrorExpected));
+        loginMessagePage.MessageError(String.format(noticeErrorExpected));
     }
 }

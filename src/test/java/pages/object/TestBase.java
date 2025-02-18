@@ -27,6 +27,7 @@ public class TestBase {
         }
         Configuration.timeout = 5000;
         Configuration.pageLoadTimeout = 5000;
+        Configuration.browserSize = "1920x1080";
         open(getLocator("Test.url"));
     }
 
