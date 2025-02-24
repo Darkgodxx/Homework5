@@ -12,6 +12,7 @@ public class LoginPage {
 
     @Step ("Ввести логин и пароль")
     public void login(String email, String pass) {
+
         $(emailInput).sendKeys(email);
 
         $(passInput).sendKeys(pass);

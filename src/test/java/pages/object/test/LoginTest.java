@@ -1,9 +1,6 @@
 package pages.object.test;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import jdk.jfr.Label;
 import org.testng.annotations.Test;
 import pages.object.LoginMessagePage;
@@ -27,7 +24,7 @@ public class LoginTest extends TestBase {
     @Description ("Авторизации с неверным логином и верным паролем")
     @Test (description = "Неверно введен логин")
     public void LoginErrorTest1() {
-        noticeErrorExpected = "Wrong password or the account is disabled, or does not exist";
+        noticeErrorExpected = "Wrong password or the account is disabled, or does not existt";
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login("piotr.awfaf.org", pass);
