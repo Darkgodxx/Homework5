@@ -16,10 +16,12 @@ public class BinPage {
     public void validateQuantity(int quantityExpected) {
         $(quantity).shouldHave(text(String.valueOf(quantityExpected)));
     }
+
     @Step ("Выбрать красную утку")
     public void clickRedDuck() {
         $(redDuck).click();
     }
+
     @Step ("Добавить красную утку")
     public void addcardProduct() {
         $(cardProduct).click();

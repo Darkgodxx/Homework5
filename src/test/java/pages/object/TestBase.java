@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.object.enums.Browser;
-
+import pages.object.enums.OS;
 import static com.codeborne.selenide.Browsers.CHROME;
 import static com.codeborne.selenide.Browsers.FIREFOX;
 import static com.codeborne.selenide.Selenide.open;
@@ -17,18 +17,23 @@ import static pages.object.helpers.Locators.getLocator;
 public class TestBase {
     Browser browsers = Browser.valueOf(System.getProperty("browser", "chrome"));
     DesiredCapabilities caps = new DesiredCapabilities();
+    OS platform = OS.valueOf(System.getProperty("os", "windows"));
 
     @BeforeMethod
     public void methodSetup() {
         switch (browsers) {
             case chrome:
                 Configuration.browser = CHROME;
-                caps.setPlatform(Platform.WIN10);
-                caps.setPlatform(Platform.LINUX);
                 break;
             case firefox:
                 Configuration.browser = FIREFOX;
+                break;
+        }
+        switch (platform) {
+            case windows:
                 caps.setPlatform(Platform.WIN10);
+                break;
+            case linux:
                 caps.setPlatform(Platform.LINUX);
                 break;
         }

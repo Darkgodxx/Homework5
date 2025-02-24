@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pages.object.LoginMessagePage;
 import pages.object.LoginPage;
 import pages.object.TestBase;
+
 @Feature("Авторизация")
 public class LoginTest extends TestBase {
     private String successExpected = "You are now logged in as %s";
@@ -13,6 +14,7 @@ public class LoginTest extends TestBase {
     private String pass = "Test1234";
     private String name = "Test Test.";
     private String noticeErrorExpected;
+
     @Description ("Авторизации с логином и паролем")
     @Test  (description  = "Успешная Авторизация")
     public void LoginSuccessTest() {
@@ -21,6 +23,7 @@ public class LoginTest extends TestBase {
         loginPage.login(login, pass);
         loginMessagePage.MessageSuccess(String.format(successExpected, name));
     }
+
     @Description ("Авторизации с неверным логином и верным паролем")
     @Test (description = "Неверно введен логин")
     public void LoginErrorTest1() {
@@ -30,6 +33,7 @@ public class LoginTest extends TestBase {
         loginPage.login("piotr.awfaf.org", pass);
         loginMessagePage.MessageError(String.format(noticeErrorExpected));
     }
+
     @Description ("Авторизации с логином и пустым паролем")
     @Test (description = "Неверно введен пароль")
     public void LoginErrorTest2() {
