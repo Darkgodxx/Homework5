@@ -35,7 +35,7 @@ public class TestBase {
         Configuration.timeout = 5000;
         Configuration.pageLoadTimeout = 5000;
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "http://169.254.172.221:4444/wd/hub";
+        Configuration.remote = "http://192.168.0.104:4444/wd/hub";
         Configuration.browserCapabilities = caps;
         open(getLocator("Test.url"));
 
