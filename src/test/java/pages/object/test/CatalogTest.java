@@ -12,7 +12,7 @@ public class CatalogTest extends TestBase {
     private String priceExpected1 = "$20";
 
     @Test (description = "Отображение информации о товаре 1")
-    public void FindCatalogInformation1() {
+    public void findCatalogInformation1() {
         CatalogPage catalogPage = new CatalogPage();
         catalogPage.clickPurpleDuck();
         catalogPage.validatePrice(String.format(priceExpected));
@@ -21,7 +21,7 @@ public class CatalogTest extends TestBase {
     }
 
     @Test (description = "Отображение информации о товаре 2")
-    public void FindCatalogInformation2() {
+    public void findCatalogInformation2() {
         CatalogPage catalogPage = new CatalogPage();
         catalogPage.clickBlueDuck();
         catalogPage.validatePrice(String.format(priceExpected1));

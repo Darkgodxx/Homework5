@@ -17,7 +17,7 @@ public class LoginTest extends TestBase {
 
     @Description ("Авторизации с логином и паролем")
     @Test  (description  = "Успешная Авторизация")
-    public void LoginSuccessTest() {
+    public void loginSuccessTest() {
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login(login, pass);
@@ -26,7 +26,7 @@ public class LoginTest extends TestBase {
 
     @Description ("Авторизации с неверным логином и верным паролем")
     @Test (description = "Неверно введен логин")
-    public void LoginErrorTest1() {
+    public void loginErrorTest1() {
         noticeErrorExpected = "Wrong password or the account is disabled, or does not existt";
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
@@ -36,7 +36,7 @@ public class LoginTest extends TestBase {
 
     @Description ("Авторизации с логином и пустым паролем")
     @Test (description = "Неверно введен пароль")
-    public void LoginErrorTest2() {
+    public void loginErrorTest2() {
         noticeErrorExpected = "You must provide both email address and password.";
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();

@@ -9,7 +9,7 @@ public class BinTest extends TestBase {
     int quantityExpected;
 
     @Test (description = "Отображение количества добавленных товаров = 1")
-    public void BinFindQuantity1() {
+    public void binFindQuantity1() {
         quantityExpected = 1;
         BinPage binPage = new BinPage();
         binPage.clickRedDuck();
@@ -18,7 +18,7 @@ public class BinTest extends TestBase {
     }
 
     @Test (description = "Отображение количества добавленных товаров = 2")
-    public void BinFindQuantity2() {
+    public void binFindQuantity2() {
         quantityExpected = 2;
         BinPage binPage = new BinPage();
         binPage.clickRedDuck();
