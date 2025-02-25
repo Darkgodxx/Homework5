@@ -27,7 +27,7 @@ public class LoginTest extends TestBase {
     @Description ("Авторизации с неверным логином и верным паролем")
     @Test (description = "Неверно введен логин")
     public void loginErrorTest1() {
-        noticeErrorExpected = "Wrong password or the account is disabled, or does not existt";
+        noticeErrorExpected = "Wrong password or the account is disabled, or does not exist";
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login("piotr.awfaf.org", pass);
