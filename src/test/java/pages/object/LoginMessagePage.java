@@ -12,11 +12,11 @@ public class LoginMessagePage {
     private By messageError = By.cssSelector("[class=\"notice errors\"]");
 
     @Step ("Приход сообщения об успешной регистрации")
-    public void MessageSuccess(String successExpected) {
+    public void messageSuccess(String successExpected) {
         $(messageSuccess).shouldHave(text(successExpected));
     }
     @Step ("Приход сообщения об ошибке при регистрации")
-    public void MessageError(String noticeErrorExpected) {
+    public void messageError(String noticeErrorExpected) {
         $(messageError).shouldHave(text(noticeErrorExpected));
     }
 }

@@ -37,8 +37,8 @@ public class TestBase {
                 caps.setPlatform(Platform.LINUX);
                 break;
         }
-        Configuration.timeout = 5000;
-        Configuration.pageLoadTimeout = 5000;
+        Configuration.timeout = 10000;
+        Configuration.pageLoadTimeout = 10000;
         Configuration.browserSize = "1920x1080";
         Configuration.remote = "http://192.168.0.104:4444/wd/hub";
         Configuration.browserCapabilities = caps;

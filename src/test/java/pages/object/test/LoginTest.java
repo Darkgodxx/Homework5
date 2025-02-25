@@ -1,7 +1,6 @@
 package pages.object.test;
 
 import io.qameta.allure.*;
-import jdk.jfr.Label;
 import org.testng.annotations.Test;
 import pages.object.LoginMessagePage;
 import pages.object.LoginPage;
@@ -21,7 +20,7 @@ public class LoginTest extends TestBase {
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login(login, pass);
-        loginMessagePage.MessageSuccess(String.format(successExpected, name));
+        loginMessagePage.messageSuccess(String.format(successExpected, name));
     }
 
     @Description ("Авторизации с неверным логином и верным паролем")
@@ -31,7 +30,7 @@ public class LoginTest extends TestBase {
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login("piotr.awfaf.org", pass);
-        loginMessagePage.MessageError(String.format(noticeErrorExpected));
+        loginMessagePage.messageError(String.format(noticeErrorExpected));
     }
 
     @Description ("Авторизации с логином и пустым паролем")
@@ -41,6 +40,6 @@ public class LoginTest extends TestBase {
         LoginPage loginPage = new LoginPage();
         LoginMessagePage loginMessagePage = new LoginMessagePage();
         loginPage.login(login, "");
-        loginMessagePage.MessageError(String.format(noticeErrorExpected));
+        loginMessagePage.messageError(String.format(noticeErrorExpected));
     }
 }
