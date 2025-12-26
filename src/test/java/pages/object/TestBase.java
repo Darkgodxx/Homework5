@@ -31,7 +31,7 @@ public class TestBase {
         }
         switch (platform) {
             case windows:
-                caps.setPlatform(Platform.WIN10);
+                caps.setPlatform(Platform.WIN11);
                 break;
             case linux:
                 caps.setPlatform(Platform.LINUX);
@@ -40,7 +40,7 @@ public class TestBase {
         Configuration.timeout = 10000;
         Configuration.pageLoadTimeout = 10000;
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "http://192.168.0.104:4444/wd/hub";
+        Configuration.remote = "http://192.168.0.31:4444/wd/hub";
         Configuration.browserCapabilities = caps;
         open(getLocator("Test.url"));
 
